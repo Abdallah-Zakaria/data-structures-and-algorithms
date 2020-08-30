@@ -67,9 +67,10 @@ const howMuchPencil = (str) => {
   let result = [];
   // Solution code here...
 
-  for(let i = 0 ; i < str.length ; i++){
-    result.push(str.slice(i, str.length-1))
+  for (let i = 0; i < str.length + 1; i++) {
+    result.push(str.slice(i, str.length));
   }
+
   return result;
 };
 
@@ -135,11 +136,10 @@ const gruffaloCrumble = {
 
 const listFoods = (recipe) => {
   let result = [];
-  // Solution code here...
-  for (let i = 0 ; i < recipe.ingredients.length ; i++ ){
-  let index = recipe.ingredients[i].indexOf(" " , 2)
-  result.push(recipe.ingredients[i].slice(index))
-}
+  recipe.ingredients.forEach((data) => {
+    let indexa = Number(data.indexOf(' ', 3)) + 1;
+    result.push(data.slice(indexa));
+  });
   return result;
 };
 
