@@ -68,7 +68,6 @@ class LinkedList {
       }
       currentNode = currentNode.pointer;
     }
-    return this;
   }
   insertAfter(target, value) {
     let node = new Node(value);
@@ -84,7 +83,6 @@ class LinkedList {
       }
       currentNode = currentNode.pointer;
     }
-    return this;
   }
 }
 module.exports = LinkedList;
