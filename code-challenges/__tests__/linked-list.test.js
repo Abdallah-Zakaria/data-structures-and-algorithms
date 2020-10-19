@@ -33,4 +33,27 @@ describe('Check valid of the property of the linked list ', ()=>{
     let ll = new LinkedList();
     expect(ll.insert(1).insert(2).insert(3).toString()).toEqual('{ 1 } ->{ 2 } ->{ 3 } -> NULL');
   });
+  it('Check the validate of the insertBefore() method',()=>{
+    let ll = new LinkedList();
+    expect(ll.insertBefore(2,5).toString()).toEqual('Exception');
+    ll.insert(1);
+    ll.insert(3);
+    ll.insert(2);
+    expect(ll.insertBefore(1,0).toString()).toEqual('{ 0 } ->{ 1 } ->{ 3 } ->{ 2 } -> NULL');
+    expect(ll.insertBefore(3,5).toString()).toEqual('{ 0 } ->{ 1 } ->{ 5 } ->{ 3 } ->{ 2 } -> NULL');
+    expect(ll.insertBefore(4,5).toString()).toEqual('Exception');
+    expect(ll.insertBefore(4).toString()).toEqual('Exception');
+  });
+  it('Check the validate of the insertAfter() method',()=>{
+    let ll = new LinkedList();
+    expect(ll.insertAfter(2,5).toString()).toEqual('Exception');
+    ll.insert(1);
+    ll.insert(3);
+    ll.insert(2);
+    expect(ll.insertAfter(3,5).toString()).toEqual('{ 1 } ->{ 3 } ->{ 5 } ->{ 2 } -> NULL');
+    expect(ll.insertAfter(2,5).toString()).toEqual('{ 1 } ->{ 3 } ->{ 5 } ->{ 2 } ->{ 5 } -> NULL');
+    expect(ll.insertAfter(4,5).toString()).toEqual('Exception');
+    expect(ll.insertAfter(4).toString()).toEqual('Exception');
+  });
 });
+
