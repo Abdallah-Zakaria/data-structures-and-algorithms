@@ -13,16 +13,22 @@ The way of linked the node by give each node a pointer to the next one until the
 - a method called toString which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
     -"{ a } -> { b } -> { c } -> NULL"
 
-- insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
-- insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+- insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node.
+
+- insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node.
+
+- a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
 
 ## API
-- insert(value) : insert a value to your linked list.
+- insert(value) : insert a value to your linked list at the head.
+- append(value) : append a value to your linkedlist at the tail.
 - includes(value) : check if the value is existing on your linked list.
 - toString() : return a string of you nodes value with styling.
 - insertBefore(value, newVal) : insert a value to your linked list after the selected value.
 - insertAfter(value, newVal) : insert a value to your linked list before the selected value.
+- kthFromEnd(k) : return the node’s value that is k from the end of the linked list.
 
 ## Solution
 ![whitebord](../../assets/linked-list1.jpg)
 ![whitebord](../../assets/linked-list2.jpg)
+![whitebord](../../assets/linked-list3.jpg)

@@ -8,11 +8,13 @@ class Node {
 class LinkedList {
   constructor() {
     this.head = null;
+    this.length = 0;
   }
-  insert(value) {
+  append(value) {
     let node = new Node(value);
     if (!this.head) {
       this.head = node;
+      this.length += 1;
       return this;
     }
     let currentNode = this.head;
@@ -20,6 +22,19 @@ class LinkedList {
       currentNode = currentNode.pointer;
     }
     currentNode.pointer = node;
+    this.length += 1;
+    return this;
+  }
+  insert(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+      this.length += 1;
+      return this;
+    }
+    node.pointer = this.head;
+    this.head = node;
+    this.length += 1;
     return this;
   }
   includes(value) {
@@ -57,6 +72,7 @@ class LinkedList {
     if (this.head.value === target) {
       node.pointer = this.head;
       this.head = node;
+      this.length += 1;
       return this;
     }
     let currentNode = this.head;
@@ -64,6 +80,7 @@ class LinkedList {
       if (currentNode.pointer.value === target) {
         node.pointer = currentNode.pointer;
         currentNode.pointer = node;
+        this.length += 1;
         return this;
       }
       currentNode = currentNode.pointer;
@@ -79,10 +96,27 @@ class LinkedList {
       if (currentNode.value === target) {
         node.pointer = currentNode.pointer;
         currentNode.pointer = node;
+        this.length += 1;
         return this;
       }
       currentNode = currentNode.pointer;
     }
+  }
+  kthFromEnd(k) {
+    const index = this.length - (k + 1);
+    if ((!index || !k) && index !== 0 && k !== 0) {
+      return 'Exception';
+    }
+    let currentNode = this.head;
+    let counter = 0;
+    while (currentNode) {
+      if (counter === index) {
+        return currentNode.value;
+      }
+      counter++;
+      currentNode = currentNode.pointer;
+    }
+    return 'Exception';
   }
 }
 module.exports = LinkedList;
