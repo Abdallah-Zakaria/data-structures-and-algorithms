@@ -13,7 +13,7 @@ describe('Validate zipLists function that takes two linked lists as arguments. Z
     list2.append(5);
     list2.append(9);
     list2.append(4);
-    expect(zipLists(list1, list2)).toEqual('{ 1 } ->{ 5 } ->{ 3 } ->{ 9 } ->{ 2 } ->{ 4 } -> NULL');
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } ->{ 5 } ->{ 3 } ->{ 9 } ->{ 2 } ->{ 4 } -> NULL');
   });
   it('List one length less than list two', () => {
     const list1 = new LinkedList();
@@ -23,7 +23,7 @@ describe('Validate zipLists function that takes two linked lists as arguments. Z
     list2.append(5);
     list2.append(9);
     list2.append(4);
-    expect(zipLists(list1, list2)).toEqual('{ 1 } ->{ 5 } ->{ 3 } ->{ 9 } ->{ 4 } -> NULL');
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } ->{ 5 } ->{ 3 } ->{ 9 } ->{ 4 } -> NULL');
   });
   it('List one length more then list two', () => {
     const list1 = new LinkedList();
@@ -33,6 +33,6 @@ describe('Validate zipLists function that takes two linked lists as arguments. Z
     const list2 = new LinkedList();
     list2.append(5);
     list2.append(9);
-    expect(zipLists(list1, list2)).toEqual('{ 1 } ->{ 5 } ->{ 3 } ->{ 9 } ->{ 2 } -> NULL');
+    expect(zipLists(list1, list2).toString()).toEqual('{ 1 } ->{ 5 } ->{ 3 } ->{ 9 } ->{ 2 } -> NULL');
   });
 });

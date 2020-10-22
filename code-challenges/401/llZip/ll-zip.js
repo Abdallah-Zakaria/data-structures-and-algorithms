@@ -3,7 +3,7 @@
 const LinkedList = require('../linkedList/linked-list');
 
 function zipLists(list1, list2) {
-  const list3 = new LinkedList();
+  let list3 = new LinkedList();
   let largerLength;
   if ((list1.length - list2.length) >= 0) {
     largerLength = list1.length;
@@ -22,6 +22,8 @@ function zipLists(list1, list2) {
       list3.append(list2.kthFromEnd(list2.length - list2Index));
     }
   }
-  return list3.toString();
+  list1.head = list3.head;
+  list3 = {};
+  return list1;
 }
 module.exports = zipLists;
