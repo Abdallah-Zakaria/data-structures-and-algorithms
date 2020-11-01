@@ -17,6 +17,7 @@ Define a method named contains that accepts a value, and returns a boolean indic
   - preOrder method its a depth first traversal return a array of value in the tree sorted as root >> left >> right
   - inOrder method its a depth first traversal return a array of value in the tree sorted as left >> root >> right
   - inOrder method its a depth first traversal return a array of value in the tree sorted as left >> right >> root
+  - findMaximumValue method return the max value in the tree.
 
 ## API
   * add(value)
@@ -24,3 +25,4 @@ Define a method named contains that accepts a value, and returns a boolean indic
   * preOrder()
   * inOrder()
   * inOrder()
+  * findMaximumValue()

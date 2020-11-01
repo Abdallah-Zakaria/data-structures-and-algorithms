@@ -78,6 +78,20 @@ describe('', () => {
     tree.add(17);
     expect(tree.postOrder()).toEqual([2, 5, 4, 7, 9, 8, 6, 11, 13, 12, 15, 17, 16, 14, 10]);
   });
+  it('Can successfully return the maximum value in the tree',()=>{
+    const tree = new BinaryTree();
+    tree.add(50).add(40).add(30).add(60).add(20);
+    expect(tree.findMaximumValue()).toEqual(60);
+  });
+  it('Can successfully return the maximum value in the tree node value is negative  ',()=>{
+    const tree = new BinaryTree();
+    tree.add(-50).add(-40).add(-30).add(-60).add(-20);
+    expect(tree.findMaximumValue()).toEqual(-20);
+  });
+  it('Can successfully return an error if the tree is empty when invoke the findMaximumValue method',()=>{
+    const tree = new BinaryTree();
+    expect(tree.findMaximumValue()).toEqual('this tree is empty');
+  });
 });
 
 

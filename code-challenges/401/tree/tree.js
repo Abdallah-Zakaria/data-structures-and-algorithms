@@ -13,7 +13,7 @@ class BinaryTree {
     this.root = root;
   }
   add(value) {
-    if(!this.root){
+    if (!this.root) {
       this.root = new Node(value);
       return this;
     }
@@ -36,7 +36,7 @@ class BinaryTree {
     return this.inOrder().includes(value);
   }
   preOrder() {
-    if(!this.root){
+    if (!this.root) {
       return 'this tree is empty';
     }
     const result = [];
@@ -49,7 +49,7 @@ class BinaryTree {
     return result;
   }
   inOrder() {
-    if(!this.root){
+    if (!this.root) {
       return 'this tree is empty';
     }
     const result = [];
@@ -62,7 +62,7 @@ class BinaryTree {
     return result;
   }
   postOrder() {
-    if(!this.root){
+    if (!this.root) {
       return 'this tree is empty';
     }
     const result = [];
@@ -73,6 +73,17 @@ class BinaryTree {
     };
     _walk(this.root);
     return result;
+  }
+  findMaximumValue() {
+    if (!this.root) {
+      return 'this tree is empty';
+    }
+    const arr = this.inOrder();
+    let maxValue = arr[0];
+    for (let i = 1; i < arr.length; i++) {
+      if(arr[i] > maxValue){maxValue= arr[i];}
+    }
+    return maxValue;
   }
 }
 
@@ -95,6 +106,8 @@ module.exports = { BinaryTree, Node };
 // node5.right = node7;
 
 // const tree = new BinaryTree(node5);
+// console.log(tree.findMaximumValue());
+
 // // test test................................................
 // // fill some nodes
 // tree.add(8);
