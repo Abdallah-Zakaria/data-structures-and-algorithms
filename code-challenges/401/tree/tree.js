@@ -81,12 +81,30 @@ class BinaryTree {
     const arr = this.inOrder();
     let maxValue = arr[0];
     for (let i = 1; i < arr.length; i++) {
-      if(arr[i] > maxValue){maxValue= arr[i];}
+      if (arr[i] > maxValue) { maxValue = arr[i]; }
     }
     return maxValue;
   }
+  breadthFirstTraversal() {
+    let arrNum = [];
+    let arrHeads = [];
+    arrHeads.push(this.root);
+    let loop = true;
+    while (loop) {
+      let length = arrHeads.length;
+      for (let i = 0; i < length; i++) {
+        if (arrHeads[i].left !== null) { arrHeads.push(arrHeads[i].left); }
+        if (arrHeads[i].right !== null) { arrHeads.push(arrHeads[i].right); }
+        arrNum.push(arrHeads[i].value);
+      }
+      arrHeads = arrHeads.slice(length);
+      if (arrHeads.length === 0) {
+        loop = false;
+      }
+    }
+    return arrNum;
+  }
 }
-
 
 module.exports = { BinaryTree, Node };
 
@@ -94,18 +112,46 @@ module.exports = { BinaryTree, Node };
 // const node3 = new Node(6);
 // const node7 = new Node(14);
 // const node2 = new Node(4);
-// // const node4 = new Node(8);
-// // const node6 = new Node(12);
+// const node4 = new Node(8);
+// const node6 = new Node(12);
 // const node8 = new Node(16);
 
-// // node7.left = node6;
+// node7.left = node6;
 // node7.right = node8;
 // node3.left = node2;
-// // node3.right = node4;
+// node3.right = node4;
 // node5.left = node3;
 // node5.right = node7;
 
+
 // const tree = new BinaryTree(node5);
+
+// console.log(tree.breadthFirstTraversal());
+
+// const one = new Node(2);
+// const two = new Node(7);
+// const three = new Node(5);
+// const four = new Node(2);
+// const five = new Node(6);
+// const six = new Node(9);
+// const seven = new Node(5);
+// const eight = new Node(11);
+// const nine = new Node(4);
+// one.left = two;
+// one.right = three;
+// two.left = four;
+// two.right = five;
+// three.right = six;
+// five.left = seven;
+// five.right = eight;
+// six.left = nine;
+// const tree = new BinaryTree(one);
+
+// console.log(tree.breadthFirstTraversal());
+
+
+
+
 // console.log(tree.findMaximumValue());
 
 // // test test................................................
