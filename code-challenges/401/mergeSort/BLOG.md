@@ -5,4 +5,4 @@ Merge sort is one of the most popular sorting algorithms today and it uses the c
 Write a function that take a arr as an argument and return a arry sorted using the merge sort algorithm.
 
 # Solution
-![whitebord](../../assets/mergeSort.jpg)
+![whitebord](../../assets/mergeSort.JPG)
