@@ -1,7 +1,7 @@
 # Hash Tables
 
 ## Challenge
-Create a hashtable that can store a objects depends on it key.
+Create a hashtable that can store an objects depends on it key.
 
 ## Approach & Efficiency
 - `set(key , value)` which inserts value into the hashtable.
