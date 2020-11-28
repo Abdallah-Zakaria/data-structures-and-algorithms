@@ -184,3 +184,85 @@ module.exports = { BinaryTree, Node };
 
 // // expected [10 , 6 , 4 , 2 , 5 , 8 , 7 , 9 , 14 , 12 , 11 , 13 , 16 , 15 , 17]
 
+
+
+// const one = new Node(5);
+// const two = new Node(3);
+// const three = new Node(8);
+// const four = new Node(7);
+// const five = new Node(15);
+
+// one.left = two;
+// one.right = three;
+// two.left = four;
+// two.right = five;
+
+// const tree = new BinaryTree(one);
+
+
+
+// class Node1 {
+//   constructor(value) {
+//     this.value = value;
+//     this.left = null;
+//     this.right = null;
+//   }
+// }
+
+// class Tree {
+//   constructor() {
+//     this.root = null;
+//   }
+
+//   add(value) {
+//     let newNode = new Node1(value);
+//     if (!this.root) {
+//       this.root = newNode;
+//     }
+//     let loop = true;
+//     function _walk(node) {
+//       if (node.left && loop) { _walk(node.left); }
+//       else { node.left = newNode; loop = false; }
+//       if (node.right && loop) { _walk(node.right); }
+//       else { node.right = newNode; loop = false; }
+//     }
+//     _walk(this);
+//   }
+// }
+
+// class Queue {
+//   constructor() {
+//     this.arr = [];
+//   }
+//   peek() {
+//     return this.arr.length !== 0;
+//   }
+//   enqueue(value) {
+//     this.arr.push(value);
+//   }
+//   dequeue() {
+//     let remove = this.arr[0];
+//     this.arr = this.arr.slice(1, this.arr.length);
+//     return remove;
+//   }
+// }
+
+// function fizzBuzTree(tree) {
+//   let breadth = new Queue();
+//   let newtree = new Tree();
+//   breadth.enqueue(tree.root);
+//   while (breadth.peek()) {
+//     let temp = breadth.dequeue();
+//     let newValue;
+//     if (temp.value % 3 === 0 && temp.value % 5 === 0) { newValue = 'FizzBuzz'; }
+//     else if (temp.value % 5 === 0) { newValue = 'Buzz'; }
+//     else if (temp.value % 3 === 0) { newValue = 'Fizz'; }
+//     else { newValue = temp.value; }
+//     newtree.add(newValue);
+//     if (temp.left) { breadth.enqueue(temp.left); }
+//     if (temp.right) { breadth.enqueue(temp.right); }
+//   }
+//   return newtree;
+// }
+
+// console.log(fizzBuzTree(tree));
